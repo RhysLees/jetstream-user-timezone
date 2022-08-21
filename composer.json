@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "rhyslees/jetstream-user-timezone",
+    "description": "This is my package jetstream-user-timezone",
     "keywords": [
-        ":vendor_name",
+        "RhysLees",
         "laravel",
-        ":package_slug"
+        "jetstream-user-timezone"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/rhyslees/jetstream-user-timezone",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Rhys Lees",
+            "email": "43909932+RhysLees@users.noreply.github.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "RhysLees\\JetstreamUserTimezone\\": "src",
+            "RhysLees\\JetstreamUserTimezone\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "RhysLees\\JetstreamUserTimezone\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,15 +51,18 @@
         "format": "vendor/bin/pint"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "RhysLees\\JetstreamUserTimezone\\JetstreamUserTimezoneServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "JetstreamUserTimezone": "RhysLees\\JetstreamUserTimezone\\Facades\\JetstreamUserTimezone"
             }
         }
     },

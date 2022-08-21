@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace RhysLees\JetstreamUserTimezone\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class JetstreamUserTimezoneCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'jetstream-user-timezone';
 
     public $description = 'My command';
 
