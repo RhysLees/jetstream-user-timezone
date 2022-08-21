@@ -2,9 +2,9 @@
 
 namespace RhysLees\JetstreamUserTimezone;
 
+use RhysLees\JetstreamUserTimezone\Commands\JetstreamUserTimezoneCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use RhysLees\JetstreamUserTimezone\Commands\JetstreamUserTimezoneCommand;
 
 class JetstreamUserTimezoneServiceProvider extends PackageServiceProvider
 {
