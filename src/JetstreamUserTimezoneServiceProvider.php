@@ -2,9 +2,9 @@
 
 namespace RhysLees\JetstreamUserTimezone;
 
+use RhysLees\JetstreamUserTimezone\Commands\JetstreamUserTimezoneCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use RhysLees\JetstreamUserTimezone\Commands\JetstreamUserTimezoneCommand;
 
 class JetstreamUserTimezoneServiceProvider extends PackageServiceProvider
 {
@@ -19,7 +19,6 @@ class JetstreamUserTimezoneServiceProvider extends PackageServiceProvider
             ->name('jetstream-user-timezone')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_jetstream-user-timezone_table')
-            ->hasCommand(JetstreamUserTimezoneCommand::class);
+            ->hasMigration('add_timezone_field_to_users_table.php')
     }
 }
