@@ -1,5 +1,14 @@
 # Jetstream User Timezone
 
+This package adds a simple way for you to add a user timezone selection field to your user profile page in jetstream.
+
+- Validation included
+
+![image](https://user-images.githubusercontent.com/43909932/189502298-5094b22a-0b56-4767-85e4-74c15798a7ed.png)
+
+
+`Note: Livewire is currently the only supported stack`
+
 ## Installation
 
 You can install the package via composer:
