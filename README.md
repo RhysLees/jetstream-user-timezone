@@ -30,7 +30,7 @@ php artisan vendor:publish --tag="jetstream-user-timezone-views"
 ## Usage
 
 
-Goto `resources/views/profile/show.blade.php` and and the following between the information form and passworf form.
+Goto `resources/views/profile/show.blade.php` and and the following between the information form and password form.
 
 ```php
 @livewire('jetstream-user-timezone::update-timezone-form')
