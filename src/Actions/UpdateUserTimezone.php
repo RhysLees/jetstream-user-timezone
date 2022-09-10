@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Actions;
+namespace RhysLees\JetstreamUserTimezone\Actions;
 
 use Illuminate\Support\Facades\Validator;
 use RhysLees\JetstreamUserTimezone\Contracts\UpdatesUserTimezone;
+use RhysLees\JetstreamUserTimezone\Rules\TimezoneRule;
 
 class UpdateUserTimezone implements UpdatesUserTimezone
 {
@@ -17,7 +18,7 @@ class UpdateUserTimezone implements UpdatesUserTimezone
     public function update($user, array $input)
     {
         Validator::make($input, [
-            'timezone' => ['present', 'string', 'max:64'],
+            'timezone' => ['present', 'string', 'max:64', 'timezone', new TimezoneRule()],
         ])->validateWithBag('updateTimezone');
 
         if ($input['timezone'] == '') {

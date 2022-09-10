@@ -3,6 +3,7 @@
 namespace RhysLees\JetstreamUserTimezone\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RhysLees\JetstreamUserTimezone\JetstreamUserTimezoneServiceProvider;
 
@@ -20,6 +21,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
+            LivewireServiceProvider::class,
             JetstreamUserTimezoneServiceProvider::class,
         ];
     }
@@ -29,7 +31,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         /*
-        $migration = include __DIR__.'/../database/migrations/create_jetstream-user-timezone_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/add_timezone_field_to_users_table.php.stub';
         $migration->up();
         */
     }

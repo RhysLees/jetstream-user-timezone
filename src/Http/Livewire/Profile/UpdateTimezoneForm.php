@@ -15,6 +15,8 @@ class UpdateTimezoneForm extends Component
      */
     public $state = [];
 
+    public $timezones;
+
     /**
      * Prepare the component.
      *
@@ -23,6 +25,12 @@ class UpdateTimezoneForm extends Component
     public function mount()
     {
         $this->state = Auth::user()->withoutRelations()->toArray();
+
+        if (config('jetstream-user-timezone.timezones') != []) {
+            return $this->timezones = config('jetstream-user-timezone.timezones');
+        }
+
+        $this->timezones = timezone_identifiers_list();
     }
 
     /**
@@ -55,6 +63,6 @@ class UpdateTimezoneForm extends Component
 
     public function render()
     {
-        return view('profile.update-timezone-form');
+        return view('jetstream-user-timezone::profile.update-timezone-form');
     }
 }

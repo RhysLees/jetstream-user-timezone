@@ -13,7 +13,7 @@
             <x-jet-label for="timezone" value="{{ __('Timezone') }}" />
             <select id="timezone" type="text" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" wire:model.defer="state.timezone" autocomplete="timezone">
                 <option value="">{{ __('Select a timezone...') }}</option>
-                @foreach (timezone_identifiers_list() as $timezone)
+                @foreach ($timezones as $timezone)
                     <option value="{{ $timezone }}">{{ $timezone }}</option>
                 @endforeach
             </select>
