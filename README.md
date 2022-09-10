@@ -39,13 +39,6 @@ You can publish the config file with:
 php artisan vendor:publish --tag="jetstream-user-timezone-config"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
 Optionally, you can publish the views using
 
 ```bash
@@ -54,9 +47,37 @@ php artisan vendor:publish --tag="jetstream-user-timezone-views"
 
 ## Usage
 
+
+Goto `resources/views/profile/show.blade.php` and and the following between the information form and passworf form.
+
 ```php
-$jetstreamUserTimezone = new RhysLees\JetstreamUserTimezone();
-echo $jetstreamUserTimezone->echoPhrase('Hello, RhysLees!');
+@livewire('jetstream-user-timezone::update-timezone-form')
+
+<x-jet-section-border />
+```
+
+It should look like this:
+
+```php
+...
+@if (Laravel\Fortify\Features::canUpdateProfileInformation())
+    @livewire('profile.update-profile-information-form')
+
+    <x-jet-section-border />
+@endif
+
+@livewire('jetstream-user-timezone::update-timezone-form')
+
+<x-jet-section-border />
+
+@if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+    <div class="mt-10 sm:mt-0">
+        @livewire('profile.update-password-form')
+    </div>
+
+    <x-jet-section-border />
+@endif
+...
 ```
 
 ## Testing
