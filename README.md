@@ -71,6 +71,14 @@ It should look like this:
 ...
 ```
 
+## What timezones are shown?
+Under the hood, we use php's default `timezone_identifiers_list()` function to return all avalible timezones to the user.
+If you would like to specify what timezone to use, you can fill the array with your choice of options in `config/jetstream-user-timezone.php` in the timezones array.
+
+`Note: you must ensure you add valid timezones to the array or validation will fail for users.`
+
+For a list of valid timezones please see: [https://www.php.net/manual/en/timezones.php](https://www.php.net/manual/en/timezones.php)
+
 ## Testing
 
 ```bash
