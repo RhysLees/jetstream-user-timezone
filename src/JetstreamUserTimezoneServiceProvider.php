@@ -22,7 +22,7 @@ class JetstreamUserTimezoneServiceProvider extends PackageServiceProvider
             ->name('jetstream-user-timezone')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('add_timezone_field_to_users_table.php');
+            ->hasMigration('add_timezone_field_to_users_table');
     }
 
     public function boot()
