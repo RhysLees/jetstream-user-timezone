@@ -2,6 +2,10 @@
 
 All notable changes to `jetstream-user-timezone` will be documented in this file.
 
+## 2.0.0 - 2022-12-22
+
+**Full Changelog**: https://github.com/RhysLees/jetstream-user-timezone/compare/1.0.1...2.0.0
+
 ## 1.0.1 - 2022-12-11
 
 ### What's Changed
