@@ -71,6 +71,18 @@ It should look like this:
 ...
 ```
 
+Finally add the following to your `User` model:
+
+```php
+use RhysLees\JetstreamUserTimezone\Traits\HasTimezone;
+
+class User extends Authenticatable
+{
+    use HasTimezone;
+    ...
+}
+```
+
 ## What timezones are shown?
 Under the hood, we use php's default `timezone_identifiers_list()` function to return all avalible timezones to the user.
 If you would like to specify what timezone to use, you can fill the array with your choice of options in `config/jetstream-user-timezone.php` in the timezones array.

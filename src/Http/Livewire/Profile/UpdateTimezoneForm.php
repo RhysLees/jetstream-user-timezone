@@ -24,8 +24,9 @@ class UpdateTimezoneForm extends Component
      */
     public function mount()
     {
-        $this->state = Auth::user()->withoutRelations()->toArray();
+        $this->state['timezone'] = Auth::user()->timezone;
 
+        // If the timezones config is set, use that, otherwise use the default list
         if (config('jetstream-user-timezone.timezones') != []) {
             return $this->timezones = config('jetstream-user-timezone.timezones');
         }
